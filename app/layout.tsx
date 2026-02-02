@@ -6,13 +6,13 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Isaiah James | Full-Stack Developer',
-  description: 'Full-Stack Developer specializing in FastAPI, Python, and modern web technologies. Building high-performance web applications.',
-  keywords: ['Full-Stack Developer', 'FastAPI', 'Python', 'React', 'Web Development', 'Isaiah James'],
+  title: 'DevWithJames | Junior Software Engineer',
+  description: 'Junior Software Engineer and Data Specialist. Building efficient software solutions with Python, web technologies, and APIs.',
+  keywords: ['Software Engineer', 'Python', 'Web Development', 'Data Specialist', 'Isaiah James', 'DevWithJames'],
   authors: [{ name: 'Isaiah James' }],
   openGraph: {
-    title: 'Isaiah James | Full-Stack Developer',
-    description: 'I build modern web applications end-to-end. Fast backends, beautiful frontends, and everything in between.',
+    title: 'DevWithJames | Junior Software Engineer',
+    description: 'Building efficient software solutions with Python, web technologies, and APIs. 2+ years of experience in data analytics and software development.',
     type: 'website',
     url: 'https://yourdomain.com',
     images: [
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Isaiah James - Full-Stack Developer',
+        alt: 'DevWithJames - Junior Software Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Isaiah James | Full-Stack Developer',
-    description: 'I build modern web applications end-to-end. Fast backends, beautiful frontends, and everything in between.',
+    title: 'DevWithJames | Junior Software Engineer',
+    description: 'Building efficient software solutions with Python, web technologies, and APIs. 2+ years of experience in data analytics and software development.',
     images: ['/og-image.png'],
   },
 }

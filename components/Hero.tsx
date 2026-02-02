@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Download } from 'lucide-react'
 
 export default function Hero() {
   const scrollToProjects = () => {
@@ -41,7 +41,7 @@ export default function Hero() {
           transition={{ delay: 0.3 }}
           className="text-2xl md:text-3xl gradient-text font-semibold mb-6"
         >
-          Full-Stack Developer
+          Junior Software Engineer / Data Specialist
         </motion.h2>
 
         <motion.p
@@ -50,13 +50,14 @@ export default function Hero() {
           transition={{ delay: 0.4 }}
           className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto"
         >
-          I build modern web applications end-to-end. Fast backends, beautiful frontends, and everything in between.
+          Building efficient software solutions with Python, web technologies, and APIs. 2+ years of experience in data analytics and software development.
         </motion.p>
 
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
+          className="flex flex-wrap gap-4 justify-center"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -66,6 +67,17 @@ export default function Hero() {
           >
             View My Work
           </motion.button>
+          
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="/resume.pdf"
+            download="Isaiah_James_Resume.pdf"
+            className="px-8 py-4 glass glass-hover rounded-2xl font-semibold flex items-center gap-2"
+          >
+            <Download size={20} />
+            Download Resume
+          </motion.a>
         </motion.div>
 
         <motion.div

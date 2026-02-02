@@ -2,8 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, MapPin, Phone, MessageCircle, Instagram } from 'lucide-react'
+import { useState } from 'react'
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('')
+  const [loading, setLoading] = useState(false)
+
   const instagramUsername = 'yg.grammy._'
   
   const contactInfo = [
@@ -18,6 +23,39 @@ export default function Contact() {
     { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/254768187542' },
     { icon: Instagram, label: 'Instagram', href: `https://instagram.com/${instagramUsername}` },
   ]
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setStatus('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // Replace with your key
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: 'New Contact Form Submission from Portfolio',
+        }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setStatus('success')
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      setStatus('error')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20">
@@ -105,11 +143,14 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-bold mb-6 gradient-text">Send a Message</h3>
             
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-2">Name</label>
                 <input
                   type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl glass glass-hover bg-white/5 dark:bg-black/20 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                   placeholder="Your name"
                 />
@@ -119,6 +160,9 @@ export default function Contact() {
                 <label className="block text-sm font-medium mb-2">Email</label>
                 <input
                   type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl glass glass-hover bg-white/5 dark:bg-black/20 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                   placeholder="your.email@example.com"
                 />
@@ -128,18 +172,34 @@ export default function Contact() {
                 <label className="block text-sm font-medium mb-2">Message</label>
                 <textarea
                   rows={5}
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl glass glass-hover bg-white/5 dark:bg-black/20 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none"
                   placeholder="Your message..."
                 />
               </div>
 
+              {status === 'success' && (
+                <div className="p-3 rounded-xl bg-green-500/20 text-green-600 dark:text-green-400 text-sm">
+                  ✓ Message sent successfully!
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="p-3 rounded-xl bg-red-500/20 text-red-600 dark:text-red-400 text-sm">
+                  ✗ Failed to send message. Please try again.
+                </div>
+              )}
+
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-3 gradient-bg text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow"
+                disabled={loading}
+                className="w-full py-3 gradient-bg text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow disabled:opacity-50"
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </motion.button>
             </form>
           </motion.div>
@@ -152,7 +212,7 @@ export default function Contact() {
           className="text-center mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
         >
           <p className="text-gray-500 dark:text-gray-400">
-            © 2024 Isaiah James
+            © 2026 Isaiah James. All rights reserved.
           </p>
         </motion.footer>
       </div>

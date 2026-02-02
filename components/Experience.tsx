@@ -8,7 +8,7 @@ export default function Experience() {
     {
       title: 'Associate – Data Entry',
       company: 'CloudFactory',
-      period: 'Feb 2023 - Apr 2025',
+      period: 'Feb 2023 - Sept 2025',
       responsibilities: [
         'Entered, verified, and analyzed large datasets including invoices, receipts, and text records',
         'Supported transcription, data analytics, and annotation projects using modern tools',
@@ -20,7 +20,7 @@ export default function Experience() {
     {
       title: 'Software Engineering Student',
       company: 'Moringa School',
-      period: 'Aug 2024 - Present',
+      period: 'Aug 2025 - Feb 2026',
       responsibilities: [
         'Learning Python, web development, APIs, databases, and software design',
         'Working on team-based projects using agile practices',

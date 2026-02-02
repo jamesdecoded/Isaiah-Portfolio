@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { Github, Database, Code2, Cog } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Projects() {
   const projects = [
@@ -10,28 +11,32 @@ export default function Projects() {
       description: 'Built a data pipeline in Python to clean, validate, and analyze CSV datasets. Wrote modular code with error handling and logging. Automated reporting to save manual work and reduce errors.',
       tech: ['Python', 'CSV Processing', 'Data Validation', 'Automation'],
       github: 'https://github.com/jamesdecoded',
-      demo: '#',
+      icon: Database,
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       title: 'REST API Application',
       description: 'Created a Python application that fetches real-time data from APIs. Handled data parsing, validation, and authentication. Used GitHub for version control and project tracking.',
       tech: ['Python', 'REST APIs', 'Authentication', 'Git'],
       github: 'https://github.com/jamesdecoded',
-      demo: '#',
+      icon: Code2,
+      gradient: 'from-purple-500 to-pink-500',
     },
     {
       title: 'Portfolio Website',
       description: 'Developed a responsive personal website using HTML and CSS. Showcased projects and skills with a clean, accessible layout. Modern glassmorphism design with dark mode support.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
       github: 'https://github.com/jamesdecoded',
-      demo: '#',
+      icon: Code2,
+      gradient: 'from-green-500 to-emerald-500',
     },
     {
       title: 'Automation Scripts',
       description: 'Built Python scripts for file management and data formatting. Automated repetitive tasks to save time and reduce errors. Improved workflow efficiency for data processing tasks.',
       tech: ['Python', 'Automation', 'File Management', 'Scripting'],
       github: 'https://github.com/jamesdecoded',
-      demo: '#',
+      icon: Cog,
+      gradient: 'from-orange-500 to-red-500',
     },
   ]
 
@@ -60,8 +65,8 @@ export default function Projects() {
               className="glass rounded-3xl p-6 glass-hover group"
             >
               <div className="mb-4">
-                <div className="w-full h-40 rounded-2xl gradient-bg mb-4 flex items-center justify-center text-white font-bold text-xl">
-                  {project.title}
+                <div className={`w-full h-40 rounded-2xl bg-gradient-to-br ${project.gradient} mb-4 flex items-center justify-center`}>
+                  <project.icon className="text-white" size={64} strokeWidth={1.5} />
                 </div>
               </div>
 
@@ -81,30 +86,17 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="flex gap-4">
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-xl glass glass-hover text-sm font-medium"
-                >
-                  <Github size={16} />
-                  Code
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-xl gradient-bg text-white text-sm font-medium"
-                >
-                  <ExternalLink size={16} />
-                  Demo
-                </motion.a>
-              </div>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl gradient-bg text-white text-sm font-medium"
+              >
+                <Github size={16} />
+                View on GitHub
+              </motion.a>
             </motion.div>
           ))}
         </div>
