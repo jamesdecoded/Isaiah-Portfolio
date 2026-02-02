@@ -6,23 +6,25 @@ import { Briefcase } from 'lucide-react'
 export default function Experience() {
   const experiences = [
     {
-      title: 'Your Job Title',
-      company: 'Company Name',
-      period: 'Month Year - Present',
+      title: 'Associate – Data Entry',
+      company: 'CloudFactory',
+      period: 'Feb 2023 - Apr 2025',
       responsibilities: [
-        'Add your key responsibility or achievement here',
-        'Add another responsibility or achievement',
-        'Add one more responsibility or achievement',
+        'Entered, verified, and analyzed large datasets including invoices, receipts, and text records',
+        'Supported transcription, data analytics, and annotation projects using modern tools',
+        'Streamlined processes, increasing data accuracy by 20%',
+        'Helped develop a data visualization tool that improved client reporting',
+        'Worked closely with cross-functional teams to ensure accurate and timely project delivery',
       ],
     },
     {
-      title: 'Previous Job Title',
-      company: 'Previous Company',
-      period: 'Month Year - Month Year',
+      title: 'Software Engineering Student',
+      company: 'Moringa School',
+      period: 'Aug 2024 - Present',
       responsibilities: [
-        'Add your key responsibility or achievement here',
-        'Add another responsibility or achievement',
-        'Add one more responsibility or achievement',
+        'Learning Python, web development, APIs, databases, and software design',
+        'Working on team-based projects using agile practices',
+        'Building full-stack applications with modern frameworks and tools',
       ],
     },
   ]

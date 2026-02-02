@@ -6,23 +6,30 @@ import { ExternalLink, Github } from 'lucide-react'
 export default function Projects() {
   const projects = [
     {
-      title: 'Project Title 1',
-      description: 'Add your project description here. Explain what it does and what technologies you used.',
-      tech: ['FastAPI', 'PostgreSQL', 'React'],
+      title: 'Python Data Processing Tool',
+      description: 'Built a data pipeline in Python to clean, validate, and analyze CSV datasets. Wrote modular code with error handling and logging. Automated reporting to save manual work and reduce errors.',
+      tech: ['Python', 'CSV Processing', 'Data Validation', 'Automation'],
       github: 'https://github.com/jamesdecoded',
       demo: '#',
     },
     {
-      title: 'Project Title 2',
-      description: 'Add your project description here. Explain what it does and what technologies you used.',
-      tech: ['Python', 'SQLAlchemy', 'Tailwind'],
+      title: 'REST API Application',
+      description: 'Created a Python application that fetches real-time data from APIs. Handled data parsing, validation, and authentication. Used GitHub for version control and project tracking.',
+      tech: ['Python', 'REST APIs', 'Authentication', 'Git'],
       github: 'https://github.com/jamesdecoded',
       demo: '#',
     },
     {
-      title: 'Project Title 3',
-      description: 'Add your project description here. Explain what it does and what technologies you used.',
-      tech: ['Node.js', 'MySQL', 'JavaScript'],
+      title: 'Portfolio Website',
+      description: 'Developed a responsive personal website using HTML and CSS. Showcased projects and skills with a clean, accessible layout. Modern glassmorphism design with dark mode support.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+      github: 'https://github.com/jamesdecoded',
+      demo: '#',
+    },
+    {
+      title: 'Automation Scripts',
+      description: 'Built Python scripts for file management and data formatting. Automated repetitive tasks to save time and reduce errors. Improved workflow efficiency for data processing tasks.',
+      tech: ['Python', 'Automation', 'File Management', 'Scripting'],
       github: 'https://github.com/jamesdecoded',
       demo: '#',
     },
@@ -41,7 +48,7 @@ export default function Projects() {
           <div className="w-20 h-1 gradient-bg mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}

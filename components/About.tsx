@@ -5,10 +5,10 @@ import { Code2, Database, Wrench } from 'lucide-react'
 
 export default function About() {
   const techStack = [
-    { category: 'Frontend', icon: Code2, items: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Tailwind CSS'] },
-    { category: 'Backend', icon: Code2, items: ['Python', 'FastAPI', 'Node.js'] },
-    { category: 'Database', icon: Database, items: ['PostgreSQL', 'MySQL', 'SQL', 'SQLAlchemy'] },
-    { category: 'Tools', icon: Wrench, items: ['Git/GitHub', 'RESTful APIs', 'Postman', 'Pydantic'] },
+    { category: 'Languages', icon: Code2, items: ['Python', 'HTML', 'CSS', 'JavaScript'] },
+    { category: 'Data & Analytics', icon: Database, items: ['Data Processing', 'Data Visualization', 'Data Annotation', 'Analytics'] },
+    { category: 'Tools', icon: Wrench, items: ['Git/GitHub', 'VS Code', 'Linux', 'Postman'] },
+    { category: 'Interests', icon: Code2, items: ['Machine Learning', 'Cloud Computing', 'Automation', 'Open Source'] },
   ]
 
   return (
@@ -33,10 +33,10 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold mb-4 gradient-text">My Journey</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              My journey into software engineering began with a fascination for how the modern web scales. I didn't just want to build pages; I wanted to build systems. This led me to master the art of bridging the gap between sleek, responsive frontends and robust, high-speed backends.
+              Junior Software Engineer and Data Specialist with 2+ years at CloudFactory working on data entry, annotation, and analytics projects. My journey into software engineering began with a passion for solving problems and building efficient solutions.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              What drives me is the "logic puzzle" of coding—taking a complex business problem and decomposing it into clean, maintainable, and efficient functions.
+              Currently expanding my skills at Moringa School, learning Python, web development, APIs, databases, and software design. I enjoy building practical software solutions and collaborating with teams to deliver quality results.
             </p>
           </motion.div>
 
@@ -46,12 +46,12 @@ export default function About() {
             viewport={{ once: true }}
             className="glass rounded-3xl p-8 glass-hover"
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">What Makes Me Unique</h3>
+            <h3 className="text-2xl font-bold mb-4 gradient-text">What I Bring</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              What makes me unique is my focus on modern performance. While many developers stick to older frameworks, I've specialized in FastAPI because I value type safety, speed, and asynchronous programming.
+              I'm skilled in Python, front-end development, and APIs. I have hands-on experience building web apps, Python data tools, and API-based projects. Comfortable with debugging, version control, and writing clean code.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              I don't just write code that works; I write code that is optimized for the future. I am a developer who views every project through the lens of both the end-user's experience and the developer's long-term maintenance.
+              Reliable, detail-oriented, and able to work well in teams or independently. I'm passionate about learning new technologies and delivering practical solutions that make a difference.
             </p>
           </motion.div>
         </div>
@@ -62,9 +62,9 @@ export default function About() {
           viewport={{ once: true }}
           className="glass rounded-3xl p-8"
         >
-          <h3 className="text-2xl font-bold mb-2 text-center gradient-text">Superpower</h3>
+          <h3 className="text-2xl font-bold mb-2 text-center gradient-text">Technical Focus</h3>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-            Backend API Development with <span className="font-bold text-blue-600 dark:text-blue-400">FastAPI</span>. I excel at creating high-concurrency endpoints and integrating them with relational databases using SQL. I have a deep understanding of data validation and automated documentation (Swagger/OpenAPI).
+            Building efficient software solutions with <span className="font-bold text-blue-600 dark:text-blue-400">Python</span>, web technologies, and APIs. Experienced in data processing, automation, and creating tools that solve real-world problems. Passionate about clean code and continuous learning.
           </p>
 
           <div className="grid md:grid-cols-4 gap-6">

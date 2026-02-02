@@ -5,23 +5,23 @@ import { motion } from 'framer-motion'
 export default function Skills() {
   const skillCategories = [
     {
-      category: 'Frontend Development',
-      skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Tailwind CSS'],
+      category: 'Programming & Development',
+      skills: ['Python', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'OOP', 'REST APIs'],
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      category: 'Backend Development',
-      skills: ['Python', 'FastAPI', 'Node.js', 'RESTful APIs'],
+      category: 'Tools & Platforms',
+      skills: ['Git/GitHub', 'VS Code', 'Linux CLI', 'Postman', 'Docker', 'JIRA/Trello'],
       color: 'from-purple-500 to-pink-500',
     },
     {
-      category: 'Database & ORM',
-      skills: ['PostgreSQL', 'MySQL', 'SQL', 'SQLAlchemy'],
+      category: 'Data & Analytics',
+      skills: ['Data Entry & Verification', 'Data Annotation', 'Data Analytics', 'Data Visualization', 'Transcription'],
       color: 'from-green-500 to-emerald-500',
     },
     {
-      category: 'Tools & Workflow',
-      skills: ['Git/GitHub', 'Postman', 'Pydantic', 'API Documentation'],
+      category: 'Soft Skills & Practices',
+      skills: ['Agile/Scrum', 'Team Collaboration', 'Debugging & Testing', 'Code Documentation', 'Time Management'],
       color: 'from-orange-500 to-red-500',
     },
   ]
