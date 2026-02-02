@@ -29,7 +29,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              {['P', 'e', 'r', 's', 'o', 'n', 'a', 'l', ' ', 'P', 'o', 'r', 't', 'f', 'o', 'l', 'i', 'o'].map((char, i) => (
+              {['D', 'e', 'v', 'W', 'i', 't', 'h', 'J', 'a', 'm', 'e', 's'].map((char, i) => (
                 <motion.span
                   key={i}
                   className="gradient-text inline-block"
@@ -50,7 +50,7 @@ export default function Navbar() {
                     repeatDelay: 3,
                   }}
                 >
-                  {char === ' ' ? '\u00A0' : char}
+                  {char}
                 </motion.span>
               ))}
             </motion.span>
