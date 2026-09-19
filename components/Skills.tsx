@@ -5,23 +5,23 @@ import { motion } from 'framer-motion'
 export default function Skills() {
   const skillCategories = [
     {
-      category: 'Programming & Development',
-      skills: ['Python', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'OOP', 'REST APIs'],
+      category: 'AI Evaluation',
+      skills: ['LLM Output Evaluation', 'Benchmark/Task Authoring', 'Rubric Design', 'AI-Generated Code Evaluation', 'Annotation', 'Error Classification', 'Factuality Assessment', 'Quality Scoring'],
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      category: 'Tools & Platforms',
-      skills: ['Git/GitHub', 'VS Code', 'Linux CLI', 'Postman', 'Docker', 'JIRA/Trello'],
+      category: 'Programming & Data',
+      skills: ['Python', 'JavaScript', 'HTML5', 'CSS3', 'XML', 'SQL', 'CSV Processing', 'Validation'],
       color: 'from-purple-500 to-pink-500',
     },
     {
-      category: 'Data & Analytics',
-      skills: ['Data Entry & Verification', 'Data Annotation', 'Data Analytics', 'Data Visualization', 'Transcription'],
+      category: 'Backend & Tools',
+      skills: ['REST APIs', 'Flask', 'Git/GitHub', 'Linux CLI', 'Postman', 'Docker', 'AWS/GCP', 'Vercel'],
       color: 'from-green-500 to-emerald-500',
     },
     {
-      category: 'Soft Skills & Practices',
-      skills: ['Agile/Scrum', 'Team Collaboration', 'Debugging & Testing', 'Code Documentation', 'Time Management'],
+      category: 'Work Practices',
+      skills: ['QA/QC', 'Debugging & Testing', 'OOP', 'SDLC', 'Agile/Scrum', 'Async Communication', 'Documentation-Driven Workflows'],
       color: 'from-orange-500 to-red-500',
     },
   ]

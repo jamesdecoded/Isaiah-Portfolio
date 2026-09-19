@@ -3,13 +3,38 @@
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import CommandPalette from './CommandPalette'
+
+const NAV_ITEMS = ['About', 'Projects', 'Skills', 'Experience', 'Contact']
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme()
+  const [activeSection, setActiveSection] = useState('hero')
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    const sectionIds = ['hero', ...NAV_ITEMS.map((item) => item.toLowerCase())]
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (visible) setActiveSection(visible.target.id)
+      },
+      { rootMargin: '-40% 0px -40% 0px', threshold: [0.1, 0.25, 0.5, 0.75] }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <motion.nav
@@ -57,15 +82,30 @@ export default function Navbar() {
           </motion.div>
 
           <div className="hidden md:flex items-center gap-8">
-            {['About', 'Projects', 'Skills', 'Experience', 'Contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollTo(item.toLowerCase())}
-                className="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              >
-                {item}
-              </button>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const id = item.toLowerCase()
+              const isActive = activeSection === id
+              return (
+                <button
+                  key={item}
+                  onClick={() => scrollTo(id)}
+                  className={`relative text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'text-blue-600 dark:text-blue-400'
+                      : 'hover:text-blue-600 dark:hover:text-blue-400'
+                  }`}
+                >
+                  {item}
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-underline"
+                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full gradient-bg"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
+              )
+            })}
           </div>
 
           <motion.button
@@ -76,6 +116,7 @@ export default function Navbar() {
           >
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </motion.button>
+          <CommandPalette />
         </div>
       </div>
     </motion.nav>

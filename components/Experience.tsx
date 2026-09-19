@@ -6,25 +6,26 @@ import { Briefcase } from 'lucide-react'
 export default function Experience() {
   const experiences = [
     {
-      title: 'Associate – Data Entry',
-      company: 'CloudFactory',
-      period: 'Feb 2023 - Sept 2025',
+      title: 'AI Training & Evaluation Contractor',
+      company: 'AI Data Platforms (Multiple Clients)',
+      period: '2025 - Present',
       responsibilities: [
-        'Entered, verified, and analyzed large datasets including invoices, receipts, and text records',
-        'Supported transcription, data analytics, and annotation projects using modern tools',
-        'Streamlined processes, increasing data accuracy by 20%',
-        'Helped develop a data visualization tool that improved client reporting',
-        'Worked closely with cross-functional teams to ensure accurate and timely project delivery',
+        'Write benchmark tasks for AI platforms, including problem statements, reference solutions, and grading rubrics, each reviewed before going live',
+        'Build coding benchmarks that test AI-generated code for correctness, efficiency, and whether it follows the instructions it was given',
+        'Review model outputs for accuracy and reasoning quality, then write structured feedback the training team can act on',
+        'Write annotation guidelines and label datasets for classification and error tagging, covering tricky edge cases',
+        'Juggle several contractor engagements at once, working independently and consistently hitting submission deadlines',
       ],
     },
     {
-      title: 'Software Engineering Student',
-      company: 'Moringa School',
-      period: 'Aug 2025 - Feb 2026',
+      title: 'Associate, Data Operations',
+      company: 'CloudFactory',
+      period: '2023 - 2025',
       responsibilities: [
-        'Learning Python, web development, APIs, databases, and software design',
-        'Working on team-based projects using agile practices',
-        'Building full-stack applications with modern frameworks and tools',
+        'Processed and validated large volumes of invoice, receipt, and transcript data for enterprise clients, staying above the team\'s accuracy benchmark',
+        'Redesigned the verification and QC workflow, lifting data accuracy by 20% and cutting down on rework later in the pipeline',
+        'Delivered image, text, and video annotation for ML training datasets, keeping agreement consistent across annotators',
+        'Worked with remote teams across several projects at once, coordinating through Slack, Jira, and Trello',
       ],
     },
   ]

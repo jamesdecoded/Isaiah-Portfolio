@@ -5,10 +5,10 @@ import { Code2, Database, Wrench } from 'lucide-react'
 
 export default function About() {
   const techStack = [
-    { category: 'Languages', icon: Code2, items: ['Python', 'HTML', 'CSS', 'JavaScript'] },
-    { category: 'Data & Analytics', icon: Database, items: ['Data Processing', 'Data Visualization', 'Data Annotation', 'Analytics'] },
-    { category: 'Tools', icon: Wrench, items: ['Git/GitHub', 'VS Code', 'Linux', 'Postman'] },
-    { category: 'Interests', icon: Code2, items: ['Machine Learning', 'Cloud Computing', 'Automation', 'Open Source'] },
+    { category: 'AI Evaluation', icon: Code2, items: ['LLM Output Evaluation', 'Benchmark/Task Authoring', 'Rubric Design', 'Error Classification'] },
+    { category: 'Programming & Data', icon: Database, items: ['Python', 'JavaScript', 'SQL', 'CSV Processing'] },
+    { category: 'Backend & Tools', icon: Wrench, items: ['REST APIs', 'Flask', 'Git/GitHub', 'Docker'] },
+    { category: 'Work Practices', icon: Code2, items: ['QA/QC', 'Agile/Scrum', 'Async Communication', 'Documentation'] },
   ]
 
   return (
@@ -33,10 +33,10 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold mb-4 gradient-text">My Journey</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Junior Software Engineer and Data Specialist with 2+ years at CloudFactory working on data entry, annotation, and analytics projects. My journey into software engineering began with a passion for solving problems and building efficient solutions.
+              Software engineer and AI data evaluation specialist with over two years of experience improving data quality and building Python-based workflows. At CloudFactory, I redesigned our verification process and lifted data accuracy by 20%.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              Currently expanding my skills at Moringa School, learning Python, web development, APIs, databases, and software design. I enjoy building practical software solutions and collaborating with teams to deliver quality results.
+              These days I write benchmark tasks and evaluation rubrics for AI training platforms, working independently, hitting deadlines, and giving clear, structured feedback across annotation and QA work.
             </p>
           </motion.div>
 
@@ -48,10 +48,10 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold mb-4 gradient-text">What I Bring</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              I'm skilled in Python, front-end development, and APIs. I have hands-on experience building web apps, Python data tools, and API-based projects. Comfortable with debugging, version control, and writing clean code.
+              I build coding benchmarks that test AI-generated code for correctness, efficiency, and instruction-following, and I review model outputs for accuracy and reasoning quality. I also write annotation guidelines and label datasets, covering tricky edge cases deliberately.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              Reliable, detail-oriented, and able to work well in teams or independently. I'm passionate about learning new technologies and delivering practical solutions that make a difference.
+              I juggle several contractor engagements at once, working independently and consistently hitting submission deadlines, with a documentation-first, async-friendly approach.
             </p>
           </motion.div>
         </div>
@@ -64,7 +64,7 @@ export default function About() {
         >
           <h3 className="text-2xl font-bold mb-2 text-center gradient-text">Technical Focus</h3>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-            Building efficient software solutions with <span className="font-bold text-blue-600 dark:text-blue-400">Python</span>, web technologies, and APIs. Experienced in data processing, automation, and creating tools that solve real-world problems. Passionate about clean code and continuous learning.
+            Building AI evaluation workflows and software solutions with <span className="font-bold text-blue-600 dark:text-blue-400">Python</span>, REST APIs, and modern web technologies. Experienced in LLM evaluation, data quality, and creating tools that solve real-world problems.
           </p>
 
           <div className="grid md:grid-cols-4 gap-6">

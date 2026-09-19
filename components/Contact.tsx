@@ -1,13 +1,19 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, MapPin, Phone, MessageCircle, Instagram } from 'lucide-react'
-import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Github, Linkedin, Mail, MapPin, Phone, MessageCircle, Instagram, CheckCircle2, XCircle } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('')
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (!status) return
+    const timer = setTimeout(() => setStatus(''), 5000)
+    return () => clearTimeout(timer)
+  }, [status])
 
   const instagramUsername = 'yg.grammy._'
   
@@ -34,7 +40,7 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // Replace with your key
+          access_key: '0ce311b1-8de1-4039-9975-c6d0f5532443',
           name: formData.name,
           email: formData.email,
           message: formData.message,
@@ -180,29 +186,51 @@ export default function Contact() {
                 />
               </div>
 
-              {status === 'success' && (
-                <div className="p-3 rounded-xl bg-green-500/20 text-green-600 dark:text-green-400 text-sm">
-                  ✓ Message sent successfully!
-                </div>
-              )}
-
-              {status === 'error' && (
-                <div className="p-3 rounded-xl bg-red-500/20 text-red-600 dark:text-red-400 text-sm">
-                  ✗ Failed to send message. Please try again.
-                </div>
-              )}
-
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 gradient-bg text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow disabled:opacity-50"
+                className="w-full py-3 gradient-bg text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow disabled:opacity-50 flex items-center justify-center gap-2"
               >
-                {loading ? 'Sending...' : 'Send Message'}
+                {loading ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </motion.button>
             </form>
           </motion.div>
+        </div>
+
+        <div className="fixed bottom-6 right-6 z-[100] pointer-events-none">
+          <AnimatePresence>
+            {status === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                className="pointer-events-auto flex items-center gap-3 px-5 py-4 rounded-2xl glass shadow-xl border border-green-500/30"
+              >
+                <CheckCircle2 className="text-green-500 flex-shrink-0" size={22} />
+                <p className="text-sm font-medium">Message sent successfully!</p>
+              </motion.div>
+            )}
+            {status === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                className="pointer-events-auto flex items-center gap-3 px-5 py-4 rounded-2xl glass shadow-xl border border-red-500/30"
+              >
+                <XCircle className="text-red-500 flex-shrink-0" size={22} />
+                <p className="text-sm font-medium">Failed to send message. Please try again.</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         <motion.footer

@@ -1,39 +1,37 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Award, CheckCircle } from 'lucide-react'
+import { GraduationCap, BrainCircuit, ShieldCheck, Plug, CheckCircle } from 'lucide-react'
 
 export default function Certifications() {
   const certifications = [
+    {
+      title: 'Software Engineering Program',
+      issuer: 'Moringa School',
+      date: 'Aug 2025 - Feb 2026',
+      skills: ['Python', 'Web Development', 'APIs', 'Databases', 'Software Design'],
+      icon: GraduationCap,
+    },
+    {
+      title: 'Artificial Intelligence (Part-Time)',
+      issuer: 'Moringa School',
+      date: 'Completed Feb 2026',
+      skills: ['AI Evaluation', 'Machine Learning', 'Benchmark Design'],
+      icon: BrainCircuit,
+    },
     {
       title: 'CloudFactory Data Workforce Training Program',
       issuer: 'CloudFactory',
       date: '2023',
       skills: ['Data Entry', 'Data Verification', 'Quality Assurance'],
-    },
-    {
-      title: 'Python Programming',
-      issuer: 'Self-Learning & Projects',
-      date: '2023 - 2025',
-      skills: ['Python', 'Data Processing', 'Automation'],
-    },
-    {
-      title: 'Git & GitHub Version Control',
-      issuer: 'Self-Learning',
-      date: '2024',
-      skills: ['Git', 'GitHub', 'Version Control', 'Collaboration'],
+      icon: ShieldCheck,
     },
     {
       title: 'API Integration & Testing',
-      issuer: 'Self-Learning',
-      date: '2024',
+      issuer: 'Self-Learning & Projects',
+      date: '2024 - 2025',
       skills: ['REST APIs', 'Postman', 'API Testing'],
-    },
-    {
-      title: 'Agile Development Fundamentals',
-      issuer: 'Moringa School',
-      date: '2025',
-      skills: ['Agile', 'Scrum', 'Team Collaboration'],
+      icon: Plug,
     },
   ]
 
@@ -62,7 +60,7 @@ export default function Certifications() {
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center flex-shrink-0">
-                  <Award className="text-white" size={24} />
+                  <cert.icon className="text-white" size={24} />
                 </div>
                 
                 <div className="flex-1">

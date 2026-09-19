@@ -1,42 +1,58 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Database, Code2, Cog } from 'lucide-react'
-import Image from 'next/image'
+import { Github } from 'lucide-react'
+import TiltCard from './TiltCard'
+import ProjectVisual, { ProjectVisualVariant } from './ProjectVisual'
 
 export default function Projects() {
-  const projects = [
+  const projects: {
+    title: string
+    description: string
+    tech: string[]
+    github: string
+    visual: ProjectVisualVariant
+    gradient: string
+  }[] = [
     {
-      title: 'Python Data Processing Tool',
-      description: 'Built a data pipeline in Python to clean, validate, and analyze CSV datasets. Wrote modular code with error handling and logging. Automated reporting to save manual work and reduce errors.',
-      tech: ['Python', 'CSV Processing', 'Data Validation', 'Automation'],
+      title: 'LLM Evaluation & Benchmark Platform',
+      description: 'Built a platform for evaluating LLM responses, using structured rubrics, reference answers, comparative scoring, and a set of edge-case tests to stress-test outputs.',
+      tech: ['Python', 'FastAPI', 'React', 'PostgreSQL'],
       github: 'https://github.com/jamesdecoded',
-      icon: Database,
+      visual: 'rubric',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      title: 'REST API Application',
-      description: 'Created a Python application that fetches real-time data from APIs. Handled data parsing, validation, and authentication. Used GitHub for version control and project tracking.',
-      tech: ['Python', 'REST APIs', 'Authentication', 'Git'],
+      title: 'Data Quality & Annotation Pipeline',
+      description: 'Built a pipeline that cleans and validates datasets, classifies errors, handles annotation, and produces automated QA reports.',
+      tech: ['Python', 'Pandas', 'SQL'],
       github: 'https://github.com/jamesdecoded',
-      icon: Code2,
+      visual: 'pipeline',
       gradient: 'from-purple-500 to-pink-500',
     },
     {
-      title: 'Portfolio Website',
-      description: 'Developed a responsive personal website using HTML and CSS. Showcased projects and skills with a clean, accessible layout. Modern glassmorphism design with dark mode support.',
-      tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+      title: 'AI Code Evaluation Benchmark',
+      description: 'Created coding benchmarks with reference solutions and hidden tests, used to check AI-generated code for correctness, edge cases, and whether it follows instructions.',
+      tech: ['Python', 'pytest', 'Docker', 'GitHub Actions'],
       github: 'https://github.com/jamesdecoded',
-      icon: Code2,
+      visual: 'tests',
       gradient: 'from-green-500 to-emerald-500',
     },
     {
-      title: 'Automation Scripts',
-      description: 'Built Python scripts for file management and data formatting. Automated repetitive tasks to save time and reduce errors. Improved workflow efficiency for data processing tasks.',
-      tech: ['Python', 'Automation', 'File Management', 'Scripting'],
+      title: 'Python Data Processing Pipeline',
+      description: 'A modular pipeline that cleans, validates, and analyzes CSV datasets, with automated reporting and error handling built in.',
+      tech: ['Python', 'Pandas'],
       github: 'https://github.com/jamesdecoded',
-      icon: Cog,
+      visual: 'csv',
       gradient: 'from-orange-500 to-red-500',
+    },
+    {
+      title: 'REST API Integration Application',
+      description: 'A Python app that pulls from live third-party APIs, handling authentication, rate limits, response parsing, and validation.',
+      tech: ['Python', 'REST APIs', 'Postman'],
+      github: 'https://github.com/jamesdecoded',
+      visual: 'api',
+      gradient: 'from-indigo-500 to-blue-500',
     },
   ]
 
@@ -61,42 +77,42 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="glass rounded-3xl p-6 glass-hover group"
             >
-              <div className="mb-4">
-                <div className={`w-full h-40 rounded-2xl bg-gradient-to-br ${project.gradient} mb-4 flex items-center justify-center`}>
-                  <project.icon className="text-white" size={64} strokeWidth={1.5} />
+              <TiltCard className="glass rounded-3xl p-6 glass-hover group h-full">
+                <div className="mb-4">
+                  <div className={`w-full h-40 rounded-2xl bg-gradient-to-br ${project.gradient} mb-4 overflow-hidden`}>
+                    <ProjectVisual variant={project.visual} />
+                  </div>
                 </div>
-              </div>
 
-              <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
-                {project.description}
-              </p>
+                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                  {project.description}
+                </p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 text-xs rounded-full glass text-blue-600 dark:text-blue-400 font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-xs rounded-full glass text-blue-600 dark:text-blue-400 font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl gradient-bg text-white text-sm font-medium"
-              >
-                <Github size={16} />
-                View on GitHub
-              </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl gradient-bg text-white text-sm font-medium"
+                >
+                  <Github size={16} />
+                  View on GitHub
+                </motion.a>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
